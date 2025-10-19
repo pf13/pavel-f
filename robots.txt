@@ -1,0 +1,7 @@
+# robots.txt for https://pavelf.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pavelf.com/sitemap.xml

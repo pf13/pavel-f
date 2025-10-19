@@ -122,6 +122,58 @@
             padding-left: 0;
         }
 
+        .article-preview {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-preview:last-child {
+            border-bottom: none;
+        }
+
+        .article-preview h3 {
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #1A1A1A;
+        }
+
+        .article-preview h3 a {
+            color: #1A1A1A;
+            text-decoration: none;
+        }
+
+        .article-preview h3 a:hover {
+            color: #0000EE;
+        }
+
+        .article-date {
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+        }
+
+        .article-description {
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        .view-all {
+            display: inline-block;
+            margin-top: 10px;
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        .view-all::after {
+            content: " →";
+        }
+
         .contact-links {
             margin: 20px 0;
         }
@@ -164,6 +216,7 @@
                 <ul>
                     <li><a href="#about" class="nav-link active">About me</a></li>
                     <li><a href="#picks" class="nav-link">My Picks</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -188,6 +241,16 @@
                     <li><a href="https://agencies.semrush.com/" target="_blank">Semrush Agency</a></li>
                     <li><a href="https://www.semrush.com/content/" target="_blank">Semrush ContentShake AI</a></li>
                 </ul>
+
+                <h2>Writing ✍️</h2>
+                <div class="writing-section">
+                    <article class="article-preview">
+                        <h3><a href="blog/practicing-writing-in-an-ai-world/">Practicing Writing in an AI World</a></h3>
+                        <time class="article-date" datetime="2025-03-15">March 15, 2025</time>
+                        <p class="article-description">How building a writing linter with ChatGPT helps sharpen thinking, resist bias, and maintain strong writing skills in the AI era.</p>
+                    </article>
+                </div>
+                <a href="blog/index.html" class="view-all">View all articles</a>
             </section>
 
             <!-- Picks Section -->

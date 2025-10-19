@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PLACEHOLDER: Replace with your article title -->
+    <title>Article Title Here - Pavel Fabrikantov</title>
+
+    <!-- PLACEHOLDER: Replace with your article description (155-160 characters) -->
+    <meta name="description" content="A compelling description of your article that will appear in search results and social media shares.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pavelf.com/blog/posts/article-slug/">
+    <meta property="og:title" content="Article Title Here">
+    <meta property="og:description" content="A compelling description of your article that will appear in search results and social media shares.">
+    <meta property="og:image" content="https://pavelf.com/blog/posts/article-slug/og-image.jpg">
+    <meta property="article:published_time" content="2025-01-15T00:00:00Z">
+    <meta property="article:author" content="Pavel Fabrikantov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://pavelf.com/blog/posts/article-slug/">
+    <meta name="twitter:title" content="Article Title Here">
+    <meta name="twitter:description" content="A compelling description of your article that will appear in search results and social media shares.">
+    <meta name="twitter:image" content="https://pavelf.com/blog/posts/article-slug/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pavelf.com/blog/posts/article-slug/">
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SKS0S370P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5SKS0S370P', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Article Title Here",
+        "description": "A compelling description of your article that will appear in search results and social media shares.",
+        "image": "https://pavelf.com/blog/posts/article-slug/og-image.jpg",
+        "datePublished": "2025-01-15T00:00:00Z",
+        "dateModified": "2025-01-15T00:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Pavel Fabrikantov",
+            "url": "https://pavelf.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Pavel Fabrikantov",
+            "url": "https://pavelf.com"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pavelf.com/blog/posts/article-slug/"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pavelf.com"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://pavelf.com/blog/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Article Title Here",
+            "item": "https://pavelf.com/blog/posts/article-slug/"
+        }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14.4px;
+            line-height: 1.8;
+            color: #1A1A1A;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .container {
+            min-height: calc(100vh - 40px);
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 8px;
+            color: #999;
+        }
+
+        .breadcrumb-current {
+            color: #666;
+        }
+
+        /* Article Header */
+        article header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            font-size: 2em;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9em;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .article-meta time {
+            display: inline-block;
+        }
+
+        .article-meta .author {
+            display: inline-block;
+        }
+
+        /* Article Content */
+        .article-content {
+            margin-bottom: 60px;
+        }
+
+        .article-content h2 {
+            font-size: 1.6em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .article-content h3 {
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .article-content a {
+            color: #0000EE;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #0000EE;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 20px 0 20px 25px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .article-content blockquote {
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid #0000EE;
+            color: #555;
+            font-style: italic;
+        }
+
+        .article-content code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        .article-content pre {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .related-articles h2 {
+            font-size: 1.4em;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .related-list {
+            list-style: none;
+        }
+
+        .related-list li {
+            margin-bottom: 15px;
+        }
+
+        .related-list a {
+            color: #0000EE;
+            text-decoration: none;
+            font-size: 1.05em;
+        }
+
+        .related-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Author */
+        .about-author {
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #0000EE;
+        }
+
+        .about-author h3 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .about-author p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .about-author a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .about-author a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to Blog Link */
+        .back-to-blog {
+            display: inline-block;
+            margin-top: 40px;
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .back-to-blog:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-blog::before {
+            content: "← ";
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .article-content h2 {
+                font-size: 1.4em;
+            }
+
+            .article-content h3 {
+                font-size: 1.2em;
+            }
+
+            .breadcrumb {
+                font-size: 0.85em;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../index.html">Blog</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Article Title Here</span>
+        </nav>
+
+        <!-- Article -->
+        <article>
+            <header>
+                <!-- PLACEHOLDER: Replace with your article title -->
+                <h1>Article Title Here</h1>
+
+                <div class="article-meta">
+                    <!-- PLACEHOLDER: Replace with publication date (format: YYYY-MM-DD) -->
+                    <time datetime="2025-01-15">January 15, 2025</time>
+                    <span class="author">by Pavel Fabrikantov</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <!-- PLACEHOLDER: Replace with your article content -->
+
+                <p>This is the introduction paragraph of your article. Start with something engaging that hooks the reader and gives them a reason to keep reading.</p>
+
+                <h2>First Main Section</h2>
+
+                <p>Your content goes here. Write naturally and clearly. Break up long paragraphs to improve readability.</p>
+
+                <p>You can include <a href="#">links to other resources</a> within your text. Make sure they're relevant and add value.</p>
+
+                <h3>Subsection</h3>
+
+                <p>Use subsections to organize your thoughts and make the article easier to scan.</p>
+
+                <ul>
+                    <li>Bullet points help break down complex ideas</li>
+                    <li>They make your content more scannable</li>
+                    <li>And easier to digest</li>
+                </ul>
+
+                <h2>Second Main Section</h2>
+
+                <p>Continue developing your ideas here.</p>
+
+                <blockquote>
+                    "You can include relevant quotes to emphasize important points or add credibility."
+                </blockquote>
+
+                <p>Code examples can be included inline like <code>const example = true;</code> or in code blocks:</p>
+
+                <pre><code>function example() {
+    console.log('Hello, world!');
+    return true;
+}</code></pre>
+
+                <h2>Conclusion</h2>
+
+                <p>Wrap up your article with a strong conclusion. Summarize key points and leave the reader with something to think about.</p>
+            </div>
+
+            <!-- Related Articles Section -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <ul class="related-list">
+                    <!-- PLACEHOLDER: Add 2-3 related articles -->
+                    <li><a href="../article-slug-1/">Related Article Title One</a></li>
+                    <li><a href="../article-slug-2/">Related Article Title Two</a></li>
+                    <li><a href="../article-slug-3/">Related Article Title Three</a></li>
+                </ul>
+            </section>
+
+            <!-- About the Author -->
+            <aside class="about-author">
+                <h3>About the Author</h3>
+                <p>Pavel Fabrikantov is executive SVP of Product at <a href="../../index.html">Semrush</a>. He enjoys building products, assembling tiger teams, and reading Wittgenstein.</p>
+                <p><a href="../../index.html">Visit my homepage</a> to learn more about my work and picks.</p>
+            </aside>
+
+            <a href="../index.html" class="back-to-blog">Back to all articles</a>
+        </article>
+
+        <footer>
+            <p>&copy; 2025 Pavel Fabrikantov. Built with Cursor for sure.</p>
+        </footer>
+    </div>
+</body>
+</html>
