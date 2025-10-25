@@ -300,25 +300,54 @@
 
     <script>
         // Simple navigation without page reloads
-        document.addEventListener('DOMContentLoaded', function() {
+        function setActiveSection(targetId) {
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('.section');
 
+            // Remove active class from all nav links and sections
+            navLinks.forEach(l => l.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+
+            // Add active class to target link and section
+            const targetLink = document.querySelector(`.nav-link[href="#${targetId}"]`);
+            if (targetLink) {
+                targetLink.classList.add('active');
+            }
+
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Handle hash on page load
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                setActiveSection(targetId);
+            }
+
+            // Handle navigation clicks
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    // Remove active class from all nav links and sections
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    sections.forEach(s => s.classList.remove('active'));
-                    
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // Show corresponding section
+
                     const targetId = this.getAttribute('href').substring(1);
-                    document.getElementById(targetId).classList.add('active');
+                    setActiveSection(targetId);
+
+                    // Update URL hash
+                    window.location.hash = targetId;
                 });
+            });
+
+            // Handle back/forward button navigation
+            window.addEventListener('hashchange', function() {
+                if (window.location.hash) {
+                    const targetId = window.location.hash.substring(1);
+                    setActiveSection(targetId);
+                }
             });
         });
     </script>
