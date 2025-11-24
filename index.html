@@ -181,29 +181,56 @@
             margin-bottom: 10px;
         }
 
-        .prompt-item {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #f5f5f5;
-            border-left: 3px solid #0000EE;
+        .prompt-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .prompt-card {
+            border: 1px solid #eee;
+            padding: 25px;
             border-radius: 4px;
-        }
-
-        .prompt-item h3 {
-            margin-top: 0;
-            color: #1A1A1A;
-        }
-
-        .prompt-link {
-            color: #1A1A1A;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
             transition: border-color 0.2s ease;
         }
 
-        .prompt-link:hover {
+        .prompt-card:hover {
+            border-color: #0000EE;
+        }
+
+        .prompt-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            margin-top: 0;
+            font-weight: 500;
+        }
+
+        .prompt-card h3 a {
+            color: #1A1A1A;
+            text-decoration: none;
+        }
+
+        .prompt-card h3 a:hover {
             color: #0000EE;
-            border-bottom-color: #0000EE;
+        }
+
+        .prompt-description {
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .view-prompt {
+            color: #0000EE;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+
+        .view-prompt:hover {
+            text-decoration: underline;
+        }
+
+        .view-prompt::after {
+            content: " →";
         }
 
 
@@ -323,9 +350,12 @@
 
                 <h2>Prompts 📚</h2>
 
-                <div class="prompt-item">
-                    <h3><a href="prompts/arxiv-validator.html" class="prompt-link">arXiv Product Validator - Complete Build</a></h3>
-                    <p>A comprehensive prompt for building the arXiv Product Validator – a Python CLI tool that validates product ideas by searching and analyzing academic research.</p>
+                <div class="prompt-grid">
+                    <article class="prompt-card">
+                        <h3><a href="prompts/arxiv-validator.html">arXiv Product Validator - Complete Build</a></h3>
+                        <p class="prompt-description">A comprehensive prompt for building the arXiv Product Validator – a Python CLI tool that validates product ideas by searching and analyzing academic research.</p>
+                        <a href="prompts/arxiv-validator.html" class="view-prompt">View prompt</a>
+                    </article>
                 </div>
             </section>
         </main>
