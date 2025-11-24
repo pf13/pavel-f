@@ -181,6 +181,32 @@
             margin-bottom: 10px;
         }
 
+        .prompt-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-left: 3px solid #0000EE;
+            border-radius: 4px;
+        }
+
+        .prompt-item h3 {
+            margin-top: 0;
+            color: #1A1A1A;
+        }
+
+        .prompt-link {
+            color: #1A1A1A;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .prompt-link:hover {
+            color: #0000EE;
+            border-bottom-color: #0000EE;
+        }
+
+
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -215,6 +241,7 @@
                     <li><a href="#picks" class="nav-link">My Picks</a></li>
                     <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#library" class="nav-link">Library</a></li>
                 </ul>
             </nav>
         </header>
@@ -288,6 +315,18 @@
             <section id="contact" class="section">
                 <p>Connect with me on <a href="https://www.linkedin.com/in/fabrikantov/" target="_blank">linkedin</a> or at fabrikantov dot x at gmail dot com.</p>
                 <p>Follow me on <a href="https://letterboxd.com" target="_blank">letterboxd</a> or <a href="https://www.goodreads.com/user/show/79385362-pavel" target="_blank">goodreads</a>.</p>
+            </section>
+
+            <!-- Library Section -->
+            <section id="library" class="section">
+                <p>I've built some prompts over time and people keep asking me to share them. So here's where you can find them. Use, remix, steal – do whatever you want with them.</p>
+
+                <h2>Prompts 📚</h2>
+
+                <div class="prompt-item">
+                    <h3><a href="prompts/arxiv-validator.html" class="prompt-link">arXiv Product Validator - Complete Build</a></h3>
+                    <p>A comprehensive prompt for building the arXiv Product Validator – a Python CLI tool that validates product ideas by searching and analyzing academic research.</p>
+                </div>
             </section>
         </main>
 
