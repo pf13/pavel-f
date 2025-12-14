@@ -1,6 +1,29 @@
 # robots.txt for https://pavelf.com/
 
+# All crawlers
 User-agent: *
+Allow: /
+
+# AI Crawlers - explicitly allow for AI SEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
 Allow: /
 
 # Sitemap location
