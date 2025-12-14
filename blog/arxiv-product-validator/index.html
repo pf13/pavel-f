@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>arXiv Product Validator - Complete Build - Pavel Fabrikantov</title>
+
+    <meta name="description" content="A comprehensive prompt for building the arXiv Product Validator – a Python CLI tool that validates product ideas by searching and analyzing academic research.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pavelf.com/blog/arxiv-product-validator/">
+    <meta property="og:title" content="arXiv Product Validator - Complete Build">
+    <meta property="og:description" content="A comprehensive prompt for building the arXiv Product Validator – a Python CLI tool that validates product ideas by searching and analyzing academic research.">
+    <meta property="article:published_time" content="2025-12-14T00:00:00Z">
+    <meta property="article:author" content="Pavel Fabrikantov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://pavelf.com/blog/arxiv-product-validator/">
+    <meta name="twitter:title" content="arXiv Product Validator - Complete Build">
+    <meta name="twitter:description" content="A comprehensive prompt for building the arXiv Product Validator – a Python CLI tool that validates product ideas by searching and analyzing academic research.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pavelf.com/blog/arxiv-product-validator/">
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RN033K26BD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RN033K26BD');
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "arXiv Product Validator - Complete Build",
+        "description": "A comprehensive prompt for building the arXiv Product Validator – a Python CLI tool that validates product ideas by searching and analyzing academic research.",
+        "datePublished": "2025-12-14T00:00:00Z",
+        "dateModified": "2025-12-14T00:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Pavel Fabrikantov",
+            "url": "https://pavelf.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Pavel Fabrikantov",
+            "url": "https://pavelf.com"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pavelf.com/blog/arxiv-product-validator/"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pavelf.com"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://pavelf.com/blog/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "arXiv Product Validator - Complete Build",
+            "item": "https://pavelf.com/blog/arxiv-product-validator/"
+        }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14.4px;
+            line-height: 1.8;
+            color: #1A1A1A;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .container {
+            min-height: calc(100vh - 40px);
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 8px;
+            color: #999;
+        }
+
+        .breadcrumb-current {
+            color: #666;
+        }
+
+        /* Article Header */
+        article header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            font-size: 2em;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9em;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .article-meta time {
+            display: inline-block;
+        }
+
+        .article-meta .author {
+            display: inline-block;
+        }
+
+        /* Article Content */
+        .article-content {
+            margin-bottom: 60px;
+        }
+
+        .article-content h2 {
+            font-size: 1.6em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .article-content h3 {
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .article-content a {
+            color: #0000EE;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #0000EE;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 20px 0 20px 25px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .article-content blockquote {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-left: 3px solid #0000EE;
+            color: #333;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        .article-content code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        .article-content pre {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        /* Copy Button */
+        .copy-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 18px;
+            background-color: #0000EE;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            transition: background-color 0.2s ease;
+        }
+
+        .copy-button:hover {
+            background-color: #0000BB;
+        }
+
+        /* Prompt Content */
+        .prompt-content {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .prompt-content pre {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .related-articles h2 {
+            font-size: 1.4em;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .related-list {
+            list-style: none;
+        }
+
+        .related-list li {
+            margin-bottom: 15px;
+        }
+
+        .related-list a {
+            color: #0000EE;
+            text-decoration: none;
+            font-size: 1.05em;
+        }
+
+        .related-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Author */
+        .about-author {
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #0000EE;
+        }
+
+        .about-author h3 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .about-author p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .about-author a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .about-author a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to Blog Link */
+        .back-to-blog {
+            display: inline-block;
+            margin-top: 40px;
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        .back-to-blog:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-blog::before {
+            content: "← ";
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .article-content h2 {
+                font-size: 1.4em;
+            }
+
+            .article-content h3 {
+                font-size: 1.2em;
+            }
+
+            .breadcrumb {
+                font-size: 0.85em;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../index.html">Blog</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">arXiv Product Validator - Complete Build</span>
+        </nav>
+
+        <!-- Article -->
+        <article>
+            <header>
+                <h1>arXiv Product Validator - Complete Build</h1>
+
+                <div class="article-meta">
+                    <time datetime="2025-12-14">December 14, 2025</time>
+                    <span class="author">by Pavel Fabrikantov</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <p>I've built some prompts over time and people keep asking me to share them. So here's where you can find them. Use, remix, steal – do whatever you want with them.</p>
+
+                <p>This is a comprehensive prompt for building the arXiv Product Validator – a Python CLI tool that validates product ideas by searching and analyzing academic research.</p>
+
+                <button class="copy-button" onclick="copyPrompt()">Copy to Clipboard</button>
+
+                <div class="prompt-content" id="promptContent">
+                    <pre>Create a complete Python CLI tool called "arXiv Product Validator" that helps users validate product ideas by searching academic research on arXiv.
+
+## Project Overview
+Build a command-line tool that:
+1. Takes a product idea description as input
+2. Generates 3-6 relevant search queries from the description
+3. Searches arXiv API for academic papers across multiple categories
+4. Analyzes papers to extract insights and market signals
+5. Generates professional markdown reports and JSON exports
+
+## Project Structure
+Create these Python modules:
+- main.py: CLI entry point with argument parsing and interactive mode
+- arxiv_client.py: arXiv API wrapper with 3-second rate limiting
+- query_generator.py: Converts product ideas to search queries and selects categories
+- analyzer.py: Extracts themes, evidence, challenges, and market signals from papers
+- reporter.py: Generates markdown and JSON reports
+- requirements.txt: Python dependencies (requests>=2.31.0, feedparser>=6.0.10, python-dateutil>=2.8.2)
+
+## CLI Features (main.py)
+- Accept product idea as positional argument or prompt interactively
+- Command-line options:
+  - `-n, --num-papers`: Number of papers to analyze (default 15, max 30)
+  - `-f, --format`: Output format (markdown, json, both; default: markdown)
+  - `-o, --output-dir`: Custom output directory (default: validation_reports)
+  - `-v, --verbose`: Show detailed progress
+  - `--no-save`: Don't save reports to files
+  - `-i, --interactive`: Force interactive mode
+- Interactive prompts for preferences if needed
+- Progress indicators with emojis (🔍, ✅, 📊, etc.)
+- Save reports with timestamps: validation_YYYYMMDD_HHMMSS.{md,json}
+
+## arXiv Client (arxiv_client.py)
+- ArxivClient class for querying arXiv API
+- Methods:
+  - search(queries: list, categories: list, max_results_per_query: int) -> list of papers
+  - Each paper should have: title, authors, abstract, published_date, arxiv_id, categories, pdf_url
+- Features:
+  - Query the arXiv REST API with Atom feeds
+  - Respect 3-second rate limiting between requests
+  - Handle API errors gracefully
+  - Parse XML responses using feedparser
+  - Deduplicate results across multiple queries
+  - Support up to 20 papers per query
+
+## Query Generator (query_generator.py)
+- QueryGenerator class to convert product ideas to search queries
+  - generate_queries(idea: str) -> list of 3-6 search queries
+  - Extract domain keywords, problem statements, and solution approaches
+  - Support 20+ domain mappings (AI, e-commerce, sustainability, healthcare, etc.)
+- QueryCategorizer class to select relevant arXiv categories
+  - auto_categorize(idea: str) -> list of category codes
+  - Support categories: cs.AI, cs.LG, cs.CY, econ.GN, stat.ML, q-bio.QM, math.OC, etc.
+  - Return 5-10 relevant categories based on keywords
+
+## Paper Analyzer (analyzer.py)
+- PaperAnalyzer class with analyze_papers(papers: list) -> analysis_dict
+- Extract and return:
+  - key_themes: Top 8 themes with frequency counts
+  - supporting_evidence: Papers with solution keywords, ranked by relevance
+  - challenges: Papers discussing limitations and risks
+  - solution_approaches: Common technical methodologies
+  - publication_timeline: Yearly distribution of papers
+  - market_signals: Dict with research_volume, maturity, trend, competing_solutions, commercialization
+- Research maturity levels: "Emerging", "Developing", "Mature"
+- Trend detection: "Growing", "Stable", "Declining"
+- Research volume levels: "Very Active" (20+), "Active" (10-20), "Emerging" (5-10), "Early Stage" (<5)
+
+## Report Generator (reporter.py)
+- MarkdownReporter class:
+  - generate_report() -> formatted markdown string
+  - Sections: Executive Summary, Research Overview, Supporting Evidence, Challenges & Risks, Solution Approaches, Market Signals, Top Papers, Recommendations
+  - Include emoji formatting, links to arXiv papers, PDF download links
+  - Professional styling with clear hierarchy
+- JSONExporter class:
+  - export_json() -> dict with structured data
+  - Include all analysis, papers, metadata, and generated_at timestamp
+
+## Key Features
+- Rate limiting: 3 seconds between API requests
+- Multiple search queries per product idea for comprehensive coverage
+- Automatic category selection based on keywords
+- Relevance scoring and ranking
+- Publication timeline analysis
+- Market signal interpretation with visual indicators
+- Professional report formatting
+- Verbose mode for debugging
+- Error handling for network issues and API timeouts
+- Support for both interactive and command-line modes
+
+## Documentation
+- README.md: Complete usage guide with examples
+- QUICKSTART.md: 2-minute getting started guide
+- FEATURES.md: Comprehensive feature checklist
+- ARCHITECTURE.md: Technical design documentation
+- Setup shell script for automated installation
+
+## Example Usage
+```bash
+python main.py
+python main.py "AI-powered meal planning app"
+python main.py "Mobile app to reduce food waste" -n 25 -f both -v
+python main.py "Sustainable fashion marketplace" --no-save -i
+```
+
+Expected Output
+
+- Interactive CLI with clear prompts
+- Real-time progress indicators
+- Detailed markdown reports with tables, lists, and links
+- JSON exports for programmatic access
+- Summary display of key metrics
+- Professional formatting with emojis and sections
+
+Ensure the code is production-ready, well-documented, includes comprehensive error handling, and follows Python best practices.</pre>
+                </div>
+
+                <h2>How to Use This Prompt</h2>
+                <p>Copy the prompt above and paste it into your favorite AI assistant (ChatGPT, Claude, etc.). The AI will help you build a complete Python CLI tool that validates product ideas by analyzing academic research from arXiv.</p>
+
+                <p>This tool is particularly useful for:</p>
+                <ul>
+                    <li>Product managers validating new ideas</li>
+                    <li>Entrepreneurs researching market opportunities</li>
+                    <li>Researchers exploring commercialization potential</li>
+                    <li>Teams looking for academic validation of concepts</li>
+                </ul>
+            </div>
+
+            <!-- Related Articles Section -->
+            <section class="related-articles">
+                <h2>Related Reading</h2>
+                <ul class="related-list">
+                    <li><a href="../how-i-hired-three-coaches-almost-for-free/">How I Hired Three Coaches Almost for Free</a> - Using AI for sports coaching</li>
+                    <li><a href="../practicing-writing-in-an-ai-world/">Practicing Writing in an AI World</a> - Using AI as a writing coach</li>
+                    <li><a href="../index.html">All Articles</a> - Browse more from the blog</li>
+                </ul>
+            </section>
+
+            <!-- About the Author -->
+            <aside class="about-author">
+                <h3>About the Author</h3>
+                <p>Pavel Fabrikantov is executive SVP of Product at <a href="../../index.html">Semrush</a> [NYSE:SEMR]. He enjoys building products, assembling tiger teams, and reading Wittgenstein.</p>
+                <p><a href="../../index.html">Visit my homepage</a> to see my recent product launches and book recommendations.</p>
+            </aside>
+
+            <a href="../index.html" class="back-to-blog">Back to all articles</a>
+        </article>
+
+        <footer>
+            <p>&copy; 2025 Pavel Fabrikantov. Built with Cursor for sure.</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyPrompt() {
+            const promptText = document.getElementById('promptContent').textContent;
+            navigator.clipboard.writeText(promptText).then(() => {
+                const button = document.querySelector('.copy-button');
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
