@@ -281,6 +281,56 @@
         }
 
 
+        .linktree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .linktree-name {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+        }
+
+        .linktree-bio {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+
+        .linktree-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .linktree-btn {
+            display: block;
+            padding: 12px 20px;
+            color: #0000EE;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .linktree-title {
+            display: block;
+        }
+
+        .linktree-desc {
+            display: block;
+            font-size: 0.8em;
+            color: #999;
+            margin-top: 2px;
+        }
+
+        .linktree-btn:hover .linktree-title {
+            text-decoration: underline;
+        }
+
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -313,6 +363,7 @@
                 <ul>
                     <li><a href="#about" class="nav-link active">About me</a></li>
                     <li><a href="#picks" class="nav-link">My Picks</a></li>
+                    <li><a href="#linktree" class="nav-link">LinkTree</a></li>
                 </ul>
             </nav>
         </header>
@@ -374,6 +425,39 @@
                     <li><a href="https://www.goodreads.com/book/show/31705497-good-country-people" target="_blank">Good Country People</a></li>
                 </ul>
 
+            </section>
+
+            <!-- LinkTree Section -->
+            <section id="linktree" class="section">
+                <div class="linktree">
+                    <h1 class="linktree-name">Pavel Fabrikantov</h1>
+                    <p class="linktree-bio">SVP of Product at Semrush</p>
+
+                    <div class="linktree-links">
+                        <a href="https://solohq.ai/" target="_blank" class="linktree-btn">
+                            <span class="linktree-title">SoloHQ AI</span>
+                            <span class="linktree-desc">Persistent memory layer for AI workflows</span>
+                        </a>
+                        <a href="https://cyclinggrid.com/" target="_blank" class="linktree-btn">
+                            <span class="linktree-title">CyclingGrid</span>
+                            <span class="linktree-desc">Interactive UCI WorldTour cycling calendar</span>
+                        </a>
+                        <a href="https://www.intentional.to/" target="_blank" class="linktree-btn">
+                            <span class="linktree-title">Intentional</span>
+                            <span class="linktree-desc">Purposeful AI workflows</span>
+                        </a>
+                        <a href="https://pfabrikantov.substack.com/p/on-reading-sebald" target="_blank" class="linktree-btn">
+                            <span class="linktree-title">On Reading Sebald</span>
+                            <span class="linktree-desc">Essay on memory, place, and W.G. Sebald</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/fabrikantov/" target="_blank" class="linktree-btn">
+                            <span class="linktree-title">LinkedIn</span>
+                        </a>
+                        <a href="https://x.com/p_fabrikantov" target="_blank" class="linktree-btn">
+                            <span class="linktree-title">X / Twitter</span>
+                        </a>
+                    </div>
+                </div>
             </section>
 
         </main>
